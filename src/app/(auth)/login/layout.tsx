@@ -1,26 +1,31 @@
-import { DarkmodeToggle } from "@/components/ui/common/darkmode-toggle";
-import { Coffee } from "lucide-react";
-import { ReactNode } from "react";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
-type AuthLayoutProps = {
-  children: ReactNode;
-};
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-export default function AuthLayout({ children }: AuthLayoutProps) {
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div className="relative bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-      <div className="absolute top-4 right-4">
-        <DarkmodeToggle />
-      </div>
-      <div className="flex w-full max-w-sm flex-col gap-6">
-        <div className="flex items-center gap-2 self-center font-medium">
-          <div className="bg-teal-500 flex p-2 items-center justify-center rounded-md">
-            <Coffee className="size-4" />
-          </div>
-          Ravfael Cafe
-        </div>
-        {children}
-      </div>
-    </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
