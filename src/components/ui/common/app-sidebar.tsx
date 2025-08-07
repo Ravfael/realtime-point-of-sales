@@ -24,7 +24,7 @@ export default function AppSidebar() {
                 <div className="bg-teal-500 flex p-2 items-center justify-center rounded-md">
                   <Coffee className="size-4" />
                 </div>
-                WPU Cafe
+                Ravfael Cafe
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
