@@ -9,6 +9,8 @@ import { createClient } from "@/lib/supabase/client";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { toast } from "sonner";
+import { Pencil, Trash2 } from "lucide-react";
+import DropdownAction from "@/components/ui/common/dropdown-action";
 
 export default function UserManagement() {
   const supabase = createClient();
@@ -28,7 +30,35 @@ export default function UserManagement() {
 
   const filteredData = useMemo(() => {
     return (users || []).map((user, index) => {
-      return [index + 1, user.id, user.name, user.role, ""];
+      return [
+        index + 1,
+        user.id,
+        user.name,
+        user.role,
+        <DropdownAction
+          menu={[
+            {
+              label: (
+                <span className="flex item-center gap-2">
+                  <Pencil />
+                  Edit
+                </span>
+              ),
+              action: () => {},
+            },
+            {
+              label: (
+                <span className="flex item-center gap-2">
+                  <Trash2 className="text-red-400" />
+                  Delete
+                </span>
+              ),
+              variant: "destructive",
+              action: () => {},
+            },
+          ]}
+        />,
+      ];
     });
   }, [users]);
 
