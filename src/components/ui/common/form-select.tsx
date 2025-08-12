@@ -1,7 +1,5 @@
 import { FieldValues, Path, UseFormReturn } from "react-hook-form";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../form";
-import { Input } from "../input";
-import { Textarea } from "../textarea";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../select";
 import { cn } from "@/lib/utils";
 
