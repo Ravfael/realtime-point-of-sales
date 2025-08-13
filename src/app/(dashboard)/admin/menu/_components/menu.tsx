@@ -17,6 +17,7 @@ import { cn, convertIDR } from "@/lib/utils";
 import { HEADER_TABLE_MENU } from "@/constants/menu-constant";
 import DialogCreateMenu from "./dialog-create-menu";
 import DialogUpdateMenu from "./dialog-update-menu";
+import DialogDeleteMenu from "./dialog-delete-menu";
 
 export default function MenuManagement() {
   const supabase = createClient();
@@ -130,6 +131,7 @@ export default function MenuManagement() {
       </div>
       <DataTable header={HEADER_TABLE_MENU} data={filteredData} isLoading={isLoading} totalPages={totalPages} currentPage={currentPage} currentLimit={currentLimit} onChangePage={handleChangePage} onChangeLimit={handleChangeLimit} />
       <DialogUpdateMenu open={selectedAction !== null && selectedAction.type === "update"} refetch={refetch} currentData={selectedAction?.data} handleChangeAction={handleChangeAction} />
+      <DialogDeleteMenu open={selectedAction !== null && selectedAction.type === "delete"} refetch={refetch} currentData={selectedAction?.data} handleChangeAction={handleChangeAction} />
     </div>
   );
 }
