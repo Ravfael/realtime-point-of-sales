@@ -120,7 +120,7 @@ export default function MenuManagement() {
       <div className="flex flex-col lg:flex-row mb-4 gap-2 justify-between w-full">
         <h1 className="text-2xl font-bold">Menu Management</h1>
         <div className="flex gap-2">
-          <Input placeholder="Search by name or category" onChange={(e) => handleChangeSearch(e.target.value)} />
+          <Input placeholder="Search..." onChange={(e) => handleChangeSearch(e.target.value)} />
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline">Create</Button>
