@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { Table } from "@/validations/table-validation";
 import { HEADER_TABLE_TABLE } from "@/constants/table-constant";
 import DialogCreateTable from "./dialog-create-table";
+import DialogUpdateTable from "./dialog-update-table";
 
 export default function TableManagement() {
   const supabase = createClient();
@@ -130,6 +131,7 @@ export default function TableManagement() {
         </div>
       </div>
       <DataTable header={HEADER_TABLE_TABLE} data={filteredData} isLoading={isLoading} totalPages={totalPages} currentPage={currentPage} currentLimit={currentLimit} onChangePage={handleChangePage} onChangeLimit={handleChangeLimit} />
+      <DialogUpdateTable open={selectedAction !== null && selectedAction.type === "update"} refetch={refetch} currentData={selectedAction?.data} handleChangeAction={handleChangeAction} />
     </div>
   );
 }
