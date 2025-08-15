@@ -14,10 +14,12 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Table } from "@/validations/table-validation";
 import { HEADER_TABLE_ORDER } from "@/constants/order-constant";
+import DialogCreateOrder from "./dialog-create-order";
 
 export default function OrderManagement() {
   const supabase = createClient();
   const { currentPage, currentLimit, currentSearch, handleChangePage, handleChangeLimit, handleChangeSearch } = useDataTable();
+
   const {
     data: orders,
     isLoading,
@@ -48,6 +50,15 @@ export default function OrderManagement() {
         });
 
       return result;
+    },
+  });
+
+  const { data: tables, refetch: refetchTables } = useQuery({
+    queryKey: ["tables"],
+    queryFn: async () => {
+      const result = await supabase.from("tables").select("*").order("created_at").order("status");
+
+      return result.data;
     },
   });
 
@@ -96,6 +107,7 @@ export default function OrderManagement() {
             <DialogTrigger asChild>
               <Button variant="outline">Create</Button>
             </DialogTrigger>
+            <DialogCreateOrder tables={tables} refetch={refetch} />
           </Dialog>
         </div>
       </div>
