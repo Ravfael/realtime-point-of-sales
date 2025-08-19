@@ -1,4 +1,5 @@
 export const HEADER_TABLE_ORDER = ["No", "Order ID", "Customer Name", "Table", "Status", "Action"];
+
 export const INITIAL_ORDER = {
   customer_name: "",
   table_id: "",
@@ -27,3 +28,26 @@ export const STATUS_CREATE_ORDER = [
 ];
 
 export const HEADER_TABLE_DETAIL_ORDER = ["No", "Menu", "Total", "Status", "Action"];
+
+export const FILTER_MENU = [
+  {
+    value: "",
+    label: "All",
+  },
+  {
+    value: "mains",
+    label: "Mains",
+  },
+  {
+    value: "sides",
+    label: "Sides",
+  },
+  {
+    value: "desserts",
+    label: "Desserts",
+  },
+  {
+    value: "beverages",
+    label: "Beverages",
+  },
+];
