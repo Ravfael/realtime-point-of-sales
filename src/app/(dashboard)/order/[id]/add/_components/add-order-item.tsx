@@ -43,7 +43,7 @@ export default function AddOrderItem({ id }: { id: string }) {
   const { data: order } = useQuery({
     queryKey: ["order", id],
     queryFn: async () => {
-      const result = await supabase.from("orders").select("id, customer_name, status, payment_url, tables (name, id)").eq("order_id", id).single();
+      const result = await supabase.from("orders").select("id, customer_name, status, payment_token, tables (name, id)").eq("order_id", id).single();
 
       if (result.error)
         toast.error("Get Order data failed", {
