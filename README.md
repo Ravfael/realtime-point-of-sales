@@ -1,40 +1,37 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Realtime Point of Sale System
 
-## Getting Started
+A modern, real-time point of sale (POS) system built with cutting-edge web technologies. This application provides a comprehensive solution for restaurant and retail businesses with features including order management, table management, menu administration, payment processing, and real-time updates.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🔐 **Authentication & Authorization** - Secure user authentication with role-based access control
+- 🍽️ **Menu Management** - Complete CRUD operations for menu items and categories
+- 🪑 **Table Management** - Table booking and status tracking
+- 📋 **Order Management** - Real-time order processing and tracking
+- 💳 **Payment Integration** - Seamless payment processing with Midtrans
+- 📊 **Admin Dashboard** - Comprehensive analytics and management interface
+- 🔄 **Real-time Updates** - Live data synchronization across all connected clients
+- 📱 **Responsive Design** - Mobile-first design that works on all devices
+- 🌙 **Dark Mode** - Built-in theme switching capability
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
+- **[React 19](https://react.dev/)** - Frontend Library
+- **[Next.js 15](https://nextjs.org/)** - React Framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Programming Language
+- **[Tailwind CSS](https://tailwindcss.com/)** - CSS Framework
+- **[Shadcn UI](https://ui.shadcn.com/)** - UI Library
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### State Management & Data Fetching
+- **[TanStack React Query](https://tanstack.com/query/latest)** - Client Data Fetching
+- **[Zustand](https://zustand-demo.pmnd.rs/)** - State Management
 
-## Learn More
+### Form & Validation
+- **[React Hook Form](https://react-hook-form.com/)** - Form Validation
+- **[Zod](https://zod.dev/)** - Data Validation
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# realtime-point-of-sales
->>>>>>> 23cdb0618f71d890b99dbe64d2e6f75bd2c5e7e2
+### Backend & Infrastructure
+- **[Supabase](https://supabase.com/)** - PostgreSQL Realtime Database, Storage & Authentication
+- **[Midtrans](https://midtrans.com/)** - Payment Gateway
+- **[Vercel](https://vercel.com/)** - Deployment Service
