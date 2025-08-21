@@ -17,6 +17,7 @@ A modern, real-time point of sale (POS) system built with cutting-edge web techn
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **[React 19](https://react.dev/)** - Frontend Library
 - **[Next.js 15](https://nextjs.org/)** - React Framework
 - **[TypeScript](https://www.typescriptlang.org/)** - Programming Language
@@ -24,14 +25,17 @@ A modern, real-time point of sale (POS) system built with cutting-edge web techn
 - **[Shadcn UI](https://ui.shadcn.com/)** - UI Library
 
 ### State Management & Data Fetching
+
 - **[TanStack React Query](https://tanstack.com/query/latest)** - Client Data Fetching
 - **[Zustand](https://zustand-demo.pmnd.rs/)** - State Management
 
 ### Form & Validation
+
 - **[React Hook Form](https://react-hook-form.com/)** - Form Validation
 - **[Zod](https://zod.dev/)** - Data Validation
 
 ### Backend & Infrastructure
+
 - **[Supabase](https://supabase.com/)** - PostgreSQL Realtime Database, Storage & Authentication
 - **[Midtrans](https://midtrans.com/)** - Payment Gateway
 - **[Vercel](https://vercel.com/)** - Deployment Service
@@ -41,19 +45,22 @@ A modern, real-time point of sale (POS) system built with cutting-edge web techn
 ### Prerequisites
 
 Make sure you have the following installed:
-- Node.js 18+ 
+
+- Node.js 18+
 - npm, yarn, pnpm, or bun
 - Git
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Ravfael/realtime-point-of-sales.git
    cd realtime-point-of-sales
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -65,11 +72,13 @@ Make sure you have the following installed:
    ```
 
 3. **Set up environment variables**
+
    ```bash
    copy env.example .env.local
    ```
-   
+
    Fill in your environment variables:
+
    ```env
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -77,14 +86,16 @@ Make sure you have the following installed:
    ```
 
 4. **Set up the database**
-   
+
    Run the SQL migrations in your Supabase SQL editor:
+
    - `migrations/001-auth-profiles.sql`
    - `migrations/002-menu.sql`
    - `migrations/003-table.sql`
    - `migrations/004-order.sql`
 
 5. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -96,7 +107,7 @@ Make sure you have the following installed:
    ```
 
 6. **Open your browser**
-   
+
    Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
 
 ## 📁 Project Structure
