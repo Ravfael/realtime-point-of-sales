@@ -19,10 +19,12 @@ import DialogCreateOrder from "./dialog-create-order";
 import { updateReservation } from "../action";
 import { INITIAL_STATE_ACTION } from "@/constants/general-constant";
 import Link from "next/link";
+import { useAuthStore } from "@/stores/auth-store";
 
 export default function OrderManagement() {
   const supabase = createClient();
   const { currentPage, currentLimit, currentSearch, handleChangePage, handleChangeLimit, handleChangeSearch } = useDataTable();
+  const profile = useAuthStore((state) => state.profile);
 
   const {
     data: orders,
@@ -148,7 +150,7 @@ export default function OrderManagement() {
         </div>,
         <DropdownAction
           menu={
-            order.status === "reserved"
+            order.status === "reserved" && profile.role !== "kitchen"
               ? reservedActionList.map((item) => ({
                   label: item.label,
                   action: () => item.action(order.id, (order.tables as unknown as { id: string }).id),
@@ -176,12 +178,14 @@ export default function OrderManagement() {
         <h1 className="text-2xl font-bold">Order Management</h1>
         <div className="flex gap-2">
           <Input placeholder="Search..." onChange={(e) => handleChangeSearch(e.target.value)} />
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline">Create</Button>
-            </DialogTrigger>
-            <DialogCreateOrder tables={tables} refetch={refetch} />
-          </Dialog>
+          {profile.role !== "kitchen" && (
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">Create</Button>
+              </DialogTrigger>
+              <DialogCreateOrder tables={tables} refetch={refetch} />
+            </Dialog>
+          )}
         </div>
       </div>
       <DataTable header={HEADER_TABLE_ORDER} data={filteredData} isLoading={isLoading} totalPages={totalPages} currentPage={currentPage} currentLimit={currentLimit} onChangePage={handleChangePage} onChangeLimit={handleChangeLimit} />

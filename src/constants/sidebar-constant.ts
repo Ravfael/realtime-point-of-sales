@@ -28,8 +28,19 @@ export const SIDEBAR_MENU_LIST = {
       icon: Users,
     },
   ],
-  cashier: [],
-  kitchen: [],
+  cashier: [
+    {
+      title: "Order",
+      url: "/order",
+      icon: Album,
+    },
+  ],
+  kitchen: [
+    {
+      title: "Order",
+      url: "/order",
+      icon: Album,
+    },
+  ],
 };
-
 export type SidebarMenuKey = keyof typeof SIDEBAR_MENU_LIST;
